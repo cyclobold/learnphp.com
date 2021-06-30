@@ -54,16 +54,35 @@ if(isset($_POST['register_user'])){
 		//there are no error messages
 		//echo "Welcome ".$firstname." ".$lastname;
 		
-		$query = "INSERT INTO `users` (`firstname`, `lastname`, `email`, `password`) VALUES('$firstname', '$lastname', '$email', '$password')";
+		//check if this email address has been used before
+		$check_email_query = "SELECT * FROM `users` WHERE `email` = '$email'";
 
 		//run the query
-		$result = mysqli_query($connection, $query);
+		$result = mysqli_query($connection, $check_email_query);
 
 		if($result){
-			echo "User registered successfully!";
+			//the query ran
+			if(mysqli_num_rows($result) == 1){
+				//the user exists already
+				echo "A user has been registered with this email address already!";
+			}else{
+				//the user does not exist..
+				//therefore create the user
+				$query = "INSERT INTO `users` (`firstname`, `lastname`, `email`, `password`) VALUES('$firstname', '$lastname', '$email', '$password')";
+
+						//run the query
+						$result = mysqli_query($connection, $query);
+
+						if($result){
+							echo "User registered successfully!";
+						}else{
+							echo "We could not register this user at this moment: ".mysqli_error($connection);
+						}
+			}
 		}else{
-			echo "We could not register this user at this moment: ".mysqli_error($connection);
+			//the query failed
 		}
+
 
 
 

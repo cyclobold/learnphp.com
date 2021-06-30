@@ -6,7 +6,7 @@
 	<?php 
 		include "process_register_user.php";
 	?>
-
+	<h4>Register</h4>
 	<form action="" method='POST'>
 		<div>
 			<label>First name</label>
@@ -30,6 +30,12 @@
 
 		<div>
 			<button type='submit' name='register_user'>Register</button>
+		</div>
+
+
+
+		<div class="form-group">
+			<h4>Already registered? <a href='login.php'>Login instead</a></h4>
 		</div>
 
 

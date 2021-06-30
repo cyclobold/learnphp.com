@@ -9,3 +9,11 @@ body{
 	margin-top:  1em;
 	width: 300px;
 }
+
+a{
+	color:  white;
+}
+
+a:visited{
+	color:  white;
+}
