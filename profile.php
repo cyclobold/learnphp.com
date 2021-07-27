@@ -14,7 +14,7 @@ echo "
 
 ";
 ?>
-<a href='#'>Change Profile Photo</a> | 
+<a href='change_photo.php'>Change Profile Photo</a> | 
 <!--<a href='delete_user_account.php'>Delete Account</a>-->
 <a href='#' onclick="confirmDelete()">Delete Account</a>
 
