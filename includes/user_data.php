@@ -13,3 +13,4 @@ if(!isset($_SESSION['email'])){
 $firstname = $_SESSION['firstname'];
 $lastname = $_SESSION['lastname'];
 $email = $_SESSION['email'];
+$id = $_SESSION['id'];

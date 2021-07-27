@@ -1,4 +1,12 @@
 <?php 
+session_start();
+	if(isset($_SESSION['email'])){
+		//the user is logged in already
+		//therefore dont show the login form
+		header('Location: user.php');
+		exit();
+
+	}
 	include "includes/head.inc.php";
 ?>
 

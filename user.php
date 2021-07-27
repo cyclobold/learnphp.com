@@ -7,7 +7,7 @@ echo "
 
 <hr>
 
-
+<a href='profile.php'>Update Profile</a> | 
 <a href='logout.php'>Log out</a>
 
 ";
